@@ -45,15 +45,14 @@ function Login ({navigation})  {
           // "email": userPFNo,
           // "password": userPassword
         }
-        axios.post('https://apps.quarto.co.ke/assemblydocs/appsrepsondents.php',{
-          // url: ,
-          // method: 'POST',
-          // headers: {
-          //   "Content-Type": "application/json",
-          //   "Accept-Encoding": "gzip, deflate, br"
-          data: req
-          // },
-          
+        axios.post({
+          url: 'https://apps.quarto.co.ke/assemblydocs/appsrepsondents.php',
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json",
+            "Accept-Encoding": "gzip, deflate, br"
+          },
+          data: {req}
         }).then(function (response) {
           // JSON.parse(req);
           console.log(response);
