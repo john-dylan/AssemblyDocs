@@ -45,24 +45,38 @@ function Login ({navigation})  {
           // "email": userPFNo,
           // "password": userPassword
         }
-        axios.post({
-          url: 'https://apps.quarto.co.ke/assemblydocs/appsrepsondents.php',
-          method: 'POST',
-          headers: {
-            "Content-Type": "application/json",
-            "Accept-Encoding": "gzip, deflate, br"
-          },
-          data: {req}
-        }).then(function (response) {
-          // JSON.parse(req);
-          console.log(response);
-          setLoading(false);
-        }).catch(function (error) {
-          console.log(error);
-          setLoading(false);
-        });
-      }
+    //     axios.post({
+    //       url: 'https://apps.quarto.co.ke/assemblydocs/appsrepsondents.php',
+    //     //   method: 'POST',
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //         "Accept-Encoding": "gzip, deflate, br"
+    //       },
+    //       data: {req}
+    //     }).then(response => {
+    //       // JSON.parse(req);
+    //       console.log(response);
+    //       setLoading(false);
+    //     }).catch(error => {
+    //       console.log(error);
+    //       setLoading(false);
+    //     });
+    //   }
 
+      axios( {
+        method: 'post',
+          URL: 'https://apps.quarto.co.ke/assemblydocs/appsrepsondents.php',
+        data: {req}
+      })
+      .then(function (response) {
+        console.log(response);
+        setLoading(false);
+      })
+      .catch(function (error) {
+        console.log(error);
+        setLoading(false);
+      });
+    }
 
     return (
         <ScrollView style={{backgroundColor: 'white'}}>
